@@ -2,9 +2,7 @@ from random import randint
 from funcoes import *
 '''
 # Pra fazer:
-1º Colocar no Github
-2º Opção no menu "Como jogar"
-3º interface
+interface
 '''
 vc = pc = par = imp = vitconsec = vit = 0
 highscore = []

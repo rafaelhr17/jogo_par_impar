@@ -157,7 +157,8 @@ def menu(arq):
                     '\n\nJOGO DO PAR OU ÍMPAR!\n\n')
         print('[1] Jogar')
         print('[2] Ver placar')
-        print('[3] Sair')
+        print('[3] Como Jogar')
+        print('[4] Sair')
         while True:
             comando = confere_input(lerint=True, txt='Selecione > ')
             if comando == 1:
@@ -173,7 +174,6 @@ def menu(arq):
                 print()
                 lerPlacar(arq)
                 r = confere_input(lerstring=True, txt='Deseja retornar ao menu? [S] para voltar > ')
-                #r = input('Deseja retornar ao menu? [S] para voltar > ').strip().upper()
                 if r in 'Ss':
                     print('Retornando ao menu', end='')
                     for i in range(0, 3):
@@ -181,8 +181,38 @@ def menu(arq):
                     print()
                     break
                 else:
-                    return 3
+                    return 4
             if comando == 3:
+                print('Carregando placar', end='')
+                for i in range(0, 3):
+                    print('.', end='')
+                print()
+                mostralinha('-', 30, 'central', 'Como Jogar')
+                print('Caso nunca tenha jogado par ou ímpar: No par ou ímpar, você e seu adversário primeiramente\n'
+                      'escolhem qual o resultado que desejam no fim, se querem que o número final seja par ou ímpar.\n'
+                      'após essa escolha, vocês escolhem quais números vão jogar, geralmente com os dedos entre 1 a 10,'
+                      '\ne caso a soma do número que escolheu com o número do seu adversário der o que você escolheu'
+                      '\ninicialmente (par ou ímpar), você ganha o jogo, caso contrário você perde.')
+                print('-'*30)
+                print('O que deve saber: leia com atenção e siga as instruções dadas, utilize apenas o teclado \n'
+                      'e sempre pressione a tecla "Enter" caso tenha escolhido o comando requerido. Seu objetivo \n'
+                      'é fazer o maxímo de pontos possíveis, e você ganha 1 ponto a cada rodada ganha, o jogo \n'
+                      'continuará até você perder, e caso queira, poderá salvar sua pontuação ao criar um nickname \n'
+                      '(apelido) de três caracteres que ficará salvo no placar junto da sua pontuação.\n'
+                      'Caso queira jogar novamente, seus dados da rodada anterior serão apagados e você voltará \n'
+                      'à estaca zero. Desafie-se a ultrapassar o seu recorde pessoal ou compita com seus amigos \n'
+                      'para saber quem consegue ganhar mais pontos!')
+                print('-' * 30)
+                r = confere_input(lerstring=True, txt='Deseja retornar ao menu? [S] para voltar > ')
+                if r in 'Ss':
+                    print('Retornando ao menu', end='')
+                    for i in range(0, 3):
+                        print('.', end='')
+                    print()
+                    break
+                else:
+                    return 4
+            if comando == 4:
                 print('Saindo', end='')
                 for i in range(0, 3):
                     print('.', end='')
